@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %} Delete Patient {% endblock %}
+{% block content %}
+<div class="container jumbotron">
+	<h1>Delete {{patient.fname}}?</h1>
+	<form method="POST">
+		{% csrf_token %}
+		<input type="submit" class="btn btn-danger" value="Delete">
+	</form>
+    <a class="btn btn-primary" href="{% url 'patient:detail' pk=patient.pk %}">Cancel</a>
+</div>
+{% endblock %}

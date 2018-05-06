@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}Patient Detail{% endblock %}
+{% block content %}
+	<div class="container jumbotron">
+		<h1>Welcome</h1>
+		<h2>Patient Details:</h2>
+		<p>First Name: {{patient_detail.fname}}</p>
+		<p>Middle Name: {{patient_detail.mname}}</p>
+		<p>Last Name: {{patient_detail.lname}}</p>
+		<p>Gender: {{patient_detail.gender}}</p>
+		<p>Date Of Birth: {{patient_detail.dob}}</p>
+		<p><a class="btn btn-warning" href="{% url 'patient:update' pk=patient_detail.pk %}"> Update </a>
+			<a class="btn btn-danger" href="{% url 'patient:delete' pk=patient_detail.pk %}"> Delete </a>
+		<a class="btn btn-secondary" href="{% url 'patient:list' %}">Back</a></p>
+	</div>
+{% endblock %}
